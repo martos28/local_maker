@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://mobile.vlad-tests.ru/ru/cars -->
+<html lang="ru" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="cXMxY19DVEgyNgAKBQo6ODcGfCYnejckAxFWOiUMNh87HF4la3QNew==">
+<title></title>
+<link href="./add_files/main.css" rel="stylesheet">
+<link href="./add_files/style2.css" rel="stylesheet">
+<link href="./add_files/responsive2.css" rel="stylesheet">
+<link href="./add_files/responsive-nav.css" rel="stylesheet">
+<link href="./add_files/jslider.css" rel="stylesheet">
+<link href="./add_files/jquery.datetimepicker.css" rel="stylesheet">
+<script type="text/javascript">        function addNewModel(e, input) {
+	var key = e.keyCode || e.which;
+	if (key != 13)
+		return false;
+
+	var brand_id = $("#trans-brand_id").val();
+	var name = $(input).val();
+
+	$.ajax({
+		url: "/auxx/add-new-model?lang=ru",
+		type: "post",
+		dataType: "html",
+		data: {brand_id: brand_id, name: name},
+		error: function(a,b,c) {alert(b);},
+		success: function(new_code) {
+			if (isNaN(parseInt(new_code))) {
+				alert(new_code);
+			}
+			else {
+				$(this).val("");
+				var new_item = $("<li>").append($("<a>").attr("data-id", new_code).text(name));
+				$(input).parent().before(new_item);
+				$("#model_dropdown").children("li:last").children("a").click();
+			}
+		}
+	});
+}</script><style type="text/css"></style></head>
+
+<body class="fon-new">
+
+
+	<div class="wrap">
+		<div class="header">
+			<div class="container" style="padding:0">
+				<div class="top-header">
+					<div class="logo">
+						<a href="http://mobile.vlad-tests.ru/"></a>
+					</div> 
+					<select id="trans-country_code" name="Trans[country_code]" value="" data-ini_value="Вся Европа" style="width:230px">
+						<option value='AT' data-image="add_files/blank.gif" data-imagecss="flag at" data-title="Austria">Austria</option>
+						<option value='GRr' data-image="add_files/blank.gif" data-imagecss="flag gr" data-title="Greece">Greece</option>
+						<option value='MT' data-image="add_files/blank.gif" data-imagecss="flag mt" data-title="Malta">Malta</option>
+						<option value='SK' data-image="add_files/blank.gif" data-imagecss="flag sk" data-title="Slovakia">Slovakia</option>
+						<option value='AL' data-image="add_files/blank.gif" data-imagecss="flag al" data-title="Albania">Albania</option>
+						<option value='DK' data-image="add_files/blank.gif" data-imagecss="flag dk" data-title="Denmark">Denmark</option>
+						<option value='MD' data-image="add_files/blank.gif" data-imagecss="flag md" data-title="Moldova">Moldova</option>
+						<option value='SI' data-image="add_files/blank.gif" data-imagecss="flag si" data-title="Slovenia">Slovenia</option>
+						<option value='AD' data-image="add_files/blank.gif" data-imagecss="flag ad" data-title="Andorra">Andorra</option>
+						<option value='IE' data-image="add_files/blank.gif" data-imagecss="flag ie" data-title="Ireland">Ireland</option>
+						<option value='MC' data-image="add_files/blank.gif" data-imagecss="flag mc" data-title="Monaco">Monaco</option>
+						<option value='UA' data-image="add_files/blank.gif" data-imagecss="flag ua" data-title="Ukraine">Ukraine</option>
+						<option value='BY' data-image="add_files/blank.gif" data-imagecss="flag by" data-title="Belarus">Belarus</option>
+						<option value='IS' data-image="add_files/blank.gif" data-imagecss="flag is" data-title="Iceland">Iceland</option>
+						<option value='ND' data-image="add_files/blank.gif" data-imagecss="flag nl" data-title="Netherlands">Netherlands</option>
+						<option value='FI' data-image="add_files/blank.gif" data-imagecss="flag fi" data-title="Finland">Finland</option>
+						<option value='BE' data-image="add_files/blank.gif" data-imagecss="flag be" data-title="Belgium">Belgium</option>
+						<option value='ES' data-image="add_files/blank.gif" data-imagecss="flag es" data-title="Spain">Spain</option>
+						<option value='NO' data-image="add_files/blank.gif" data-imagecss="flag no" data-title="Norway">Norway</option>
+						<option value='FR' data-image="add_files/blank.gif" data-imagecss="flag fr" data-title="France">France</option>
+						<option value='BG' data-image="add_files/blank.gif" data-imagecss="flag bg" data-title="Bulgaria">Bulgaria</option>
+						<option value='IT' data-image="add_files/blank.gif" data-imagecss="flag it" data-title="Italy">Italy</option>
+						<option value='PL' data-image="add_files/blank.gif" data-imagecss="flag pl" data-title="Poland">Poland</option>
+						<option value='HR' data-image="add_files/blank.gif" data-imagecss="flag hr" data-title="Croatia (Hrvatska)">Croatia (Hrvatska)</option>
+						<option value='BA' data-image="add_files/blank.gif" data-imagecss="flag ba" data-title="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+						<option value='LV' data-image="add_files/blank.gif" data-imagecss="flag lv" data-title="Latvia">Latvia</option>
+						<option value='PT' data-image="add_files/blank.gif" data-imagecss="flag pt" data-title="Portugal">Portugal</option>
+						<option value='CS' data-image="add_files/blank.gif" data-imagecss="flag cs" data-title="Serbia and Montenegro">Serbia and Montenegro</option>
+						<option value='VA' data-image="add_files/blank.gif" data-imagecss="flag va" data-title="Vatican City State (Holy See)">Vatican City</option>
+						<option value='LT' data-image="add_files/blank.gif" data-imagecss="flag lt" data-title="Lithuania">Lithuania</option>
+						<option value='RU' data-image="add_files/blank.gif" data-imagecss="flag ru" data-title="Russian Federation">Russian Federation</option>
+						<option value='CZ' data-image="add_files/blank.gif" data-imagecss="flag cz" data-title="Czech Republic">Czech Republic</option>
+						<option value='GB' data-image="add_files/blank.gif" data-imagecss="flag gb" data-title="Great Britain (UK)">Great Britain (UK)</option>
+						<option value='LI' data-image="add_files/blank.gif" data-imagecss="flag li" data-title="Liechtenstein">Liechtenstein</option>
+						<option value='RO' data-image="add_files/blank.gif" data-imagecss="flag ro" data-title="Romania">Romania</option>
+						<option value='CH' data-image="add_files/blank.gif" data-imagecss="flag ch" data-title="Switzerland">Switzerland</option>
+						<option value='HU' data-image="add_files/blank.gif" data-imagecss="flag hu" data-title="Hungary">Hungary</option>
+						<option value='LU' data-image="add_files/blank.gif" data-imagecss="flag lu" data-title="Luxembourg">Luxembourg</option>
+						<option value='SM' data-image="add_files/blank.gif" data-imagecss="flag sm" data-title="San Marino">San Marino</option>
+						<option value='SE' data-image="add_files/blank.gif" data-imagecss="flag se" data-title="Sweden">Sweden</option>
+						<option value='DE' data-image="add_files/blank.gif" data-imagecss="flag de" data-title="Germany">Germany</option>
+						<option value='MK' data-image="add_files/blank.gif" data-imagecss="flag mk" data-title="Macedonia">Macedonia</option>
+						<option value='CS' data-image="add_files/blank.gif" data-imagecss="flag cs" data-title="Serbia">Serbia</option>
+						<option value='EE' data-image="add_files/blank.gif" data-imagecss="flag ee" data-title="Estonia">Estonia</option>
+						<option value='' selected="selected" data-image="add_files/blank.gif" data-imagecss="flag eu" data-title="Euro"> Вся Европа </option>            </select>
+
+
+
+						<div class="reg-block w1">
+							<ul>
+								<li class="login-link" id="login">
+								<a href="http://mobile.vlad-tests.ru/ru/cars#">
+									<svg class="login-pic" width="23" height="25">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./add_files/allsvg.svg#login" />
+									</svg>Вход</a>
+								</li>
+								<li class="login-link hid">
+									<div class="error" style="display: block">
+									</div>
+
+									<form id="loginform" action="http://mobile.vlad-tests.ru/ru/cars" method="post" onsubmit="return false;">
+										<input type="hidden" name="_csrf" value="cXMxY19DVEgyNgAKBQo6ODcGfCYnejckAxFWOiUMNh87HF4la3QNew==">                    <fieldset>
+										<input type="text" id="loginform-email" name="LoginForm[email]" placeholder="Email">
+										<input type="password" id="loginform-password" name="LoginForm[password]" placeholder="Пароль" class="noy">
+									</fieldset>
+
+									<div class="save">
+										<div class="po50">
+											<div class="checkbox">
+
+												<input type="checkbox" value="0" name="LoginForm[rememberMe]" id="dfd">
+												<label id="dfd_label" for="dfd">
+													<span class="pseudo-checkbox white"></span>
+													<span class="label-text">Запомнить меня</span>
+												</label>
+											</div>
+										</div>
+
+										<div class="po50">
+											<a href="http://mobile.vlad-tests.ru/ru/cars#" id="zabil">Забыли пароль?</a>
+										</div>
+									</div>
+								</form>            </li>
+
+								<li class="registration-link rega pad">
+									
+								<a class="registra" href="http://mobile.vlad-tests.ru/ru/user/register">
+
+									<svg class="avatar" width="23" height="25">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#avatar" />
+									</svg>Регистрация</a>            </li>
+								</ul>
+							</div>
+
+
+							<div class="reg-block w2">
+								<ul>
+									<li class="login-link">
+										<form id="recoveryform" action="http://mobile.vlad-tests.ru/ru/cars" method="post" onsubmit="return false;">
+											<input type="hidden" name="_csrf" value="cXMxY19DVEgyNgAKBQo6ODcGfCYnejckAxFWOiUMNh87HF4la3QNew==">                    <fieldset>
+											<input type="text" name="User[email]" class="bigmail" placeholder="Email">
+											<input id="recoveryform_btnok" type="button" value="SEND" class="sbn">
+										</fieldset>
+									</form>            </li>
+									<li class="registration-link rega">
+										<a href="http://mobile.vlad-tests.ru/ru/start?scenario=registration">Регистрация</a>                <a href="http://mobile.vlad-tests.ru/ru/cars#" class="zabil" id="avtor">Логин</a>
+									</li>
+								</ul>
+							</div>
+
+
+
+						</div>
+
+
+						<a href="http://mobile.vlad-tests.ru/ru/cars#" class="nav-toggle" aria-hidden="true">Menu</a><div id="nav" class="nav-collapses nav-collapses-0 closed" style="transition: max-height 400ms; position: relative;" aria-hidden="false">
+						<ul>
+							<li class="home dv act"><a href="http://mobile.vlad-tests.ru/"><i></i>Главная</a></li>
+							<li class="avtor dv hides"><a href="http://mobile.vlad-tests.ru/ru/cars#"><i></i>Авторизация</a></li>
+							<li class="legko active"><a href="http://mobile.vlad-tests.ru/ru/cars"><i></i>Легковые</a></li>
+							<li class="bus"><a href="http://mobile.vlad-tests.ru/ru/buses"><i></i>Автобусы</a></li>
+							<li class="gruz"><a href="http://mobile.vlad-tests.ru/ru/vans"><i></i>Грузовые</a></li>
+							<li class="spec"><a href="http://mobile.vlad-tests.ru/ru/constructionmachines"><i></i>Спецтехника</a></li>
+							<li class="moto"><a href="http://mobile.vlad-tests.ru/ru/bikes"><i></i>Мотоциклы</a></li>
+							<li class="lodka"><a href="http://mobile.vlad-tests.ru/ru/motorboats"><i></i>Лодки</a></li>
+							<li class="sogl dv hides"><a href="http://mobile.vlad-tests.ru/ru/cars#"><i></i>Cоглашение</a></li>
+							<li class="kont dv hides"><a href="http://mobile.vlad-tests.ru/ru/cars#"><i></i>Контакты</a></li>
+						</ul>
+					</div>
+
+
+				</div>
+			</div>
+
+
+			<div class="main">
+
+				
+
+
+				<div class="filter" id="filt">
+					<div class="container">
+			
+						
+						<div class="show_filt"></div>
+
+
+
+						<form id="filter_form" action="http://mobile.vlad-tests.ru/ru/cars" method="post">
+							<input type="hidden" name="_csrf" value="cXMxY19DVEgyNgAKBQo6ODcGfCYnejckAxFWOiUMNh87HF4la3QNew==">
+							<div class="sliders-block down">
+								<div class="year-slider">
+
+
+									<span class="slider-text">Год</span>
+									<div class="layout-slider">
+										<input type="slider" id="trans-slider_years" name="Trans[slider_years]" value="2002;2012" data-ini_value="2002;2012">            </div>
+									</div>
+
+									<div class="price-slider">
+										<div class="text">Цена</div>
+
+										<div class="checkbox checkbox_price-slider">
+											<input type="checkbox" id="trans-nds_only" name="Trans[nds_only]" value="1">
+											<label for="trans-nds_only">
+												<span class="pseudo-checkbox white"></span>
+												<span class="label-text">Только &nbsp; с &nbsp; НДС</span>
+											</label>
+										</div>
+
+										<div class="layout-slider">
+											<input type="slider" id="trans-slider_prices" name="Trans[slider_prices]" value="2000;10000" data-ini_value="2000;10000">            </div>
+										</div>  <!--div class="price-slider"-->
+									</div>  <!--div class="sliders-block down"-->
+
+
+
+									<div class="bottom-filter down" style="display: block;">
+										<div class="filter-menu">
+											<a class="toggleMenu" href="http://mobile.vlad-tests.ru/ru/cars#">Меню</a>
+
+											<div class="box">
+												<input type="button" id="btn_reset_filters" class="reset_btn" value="Сброс">
+												<input type="submit" id="sbt" name="sbm" class="btngeen" value="Найти">
+											</div>
+
+											<div id="filter_form_hidden_inputs_cnt" style="display: none;"><input type="hidden" id="trans-category_id" name="Trans[category_id]"><input type="hidden" id="trans-brand_id" name="Trans[brand_id]"><input type="hidden" id="trans-model_id" name="Trans[model_id]"><input type="hidden" id="trans-transmiss_id" name="Trans[transmiss_id]"><input type="hidden" id="trans-fuel_id" name="Trans[fuel_id]"><input type="hidden" id="trans-interior_id" name="Trans[interior_id]"><input type="hidden" id="trans-wheel_id" name="Trans[wheel_id]"><input type="hidden" id="trans-climate_id" name="Trans[climate_id]"><input type="hidden" id="trans-emission_id" name="Trans[emission_id]"><input type="hidden" id="trans-sticker_id" name="Trans[sticker_id]"><input type="hidden" id="trans-cab_id" name="Trans[cab_id]"><input type="hidden" id="trans-axle_id" name="Trans[axle_id]"><input type="hidden" id="trans-bunk_id" name="Trans[bunk_id]"><input type="hidden" id="trans-hydraulic_id" name="Trans[hydraulic_id]"><input type="hidden" id="trans-length_id" name="Trans[length_id]"><input type="hidden" id="trans-licweight_id" name="Trans[licweight_id]"><input type="hidden" id="trans-load_id" name="Trans[load_id]"><input type="hidden" id="trans-seat_id" name="Trans[seat_id]"><input type="hidden" id="trans-length" name="Trans[length]"><input type="hidden" id="trans-motohours" name="Trans[motohours]"></div>
+
+
+											<ul id="w0" class="nav nav-tabs nav-tabs_my">
+											<li class=""><a href="/ru/vans">Грузоподъемность до 7,5т</a></li>
+												<li class="active"><a href="/ru/trucks">Грузоподъемность свыше 7,5т</a></li>
+												<li class=""><a href="/ru/tractors">Седельный тягач</a></li>
+												<li class=""><a href="/ru/trailers">Прицеп</a></li>
+												<li class=""><a href="/ru/semitrailers">Полуприцеп</a></li>
+											</ul>
+											<div id="dropdowns_cnt" style="visibility: visible;">
+												<ul class="nav2">
+													<li class="items_cnt" data-trans_field="category_id" data-ini_text="Категория">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Категория</a><span class="hd">Категория</span>            <ul class="kategoti-first"><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="1">Внедорожник/пикап</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="8">Иное</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="2">Кабриолет/родстер</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="3">Малолитражный автомобиль</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="4">Минивэн/микроавтобус</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="5">Седан</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="6">Спортивный автомобиль/купе</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="7">Универсал</a></li></ul>
+													</li>
+
+													<li class="static items_cnt" data-trans_field="brand_id" data-ini_text="Марки">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Марки</a><span class="hd">Марки</span>            <ul class="f16" style="left: -340px; right: -29.8px;"><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="1">Abarth</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="2">AC</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="3">Acura</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="4">Aixam</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="5">Alfa Romeo</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="6">ALPINA</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="113">Andere</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="7">Artega</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="8">Asia Motors</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="9">Aston Martin</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="10">Audi</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="11">Austin</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="12">Austin Healey</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="13">Bentley</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="14">BMW</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="15">Borgward</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="16">Brilliance</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="17">Bugatti</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="18">Buick</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="19">Cadillac</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="20">Casalini</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="21">Caterham</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="22">Chatenet</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="23">Chevrolet</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="24">Chrysler</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="25">Citroën</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="26">Cobra</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="27">Corvette</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="28">Dacia</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="29">Daewoo</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="30">Daihatsu</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="31">DeTomaso</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="32">Dodge</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="33">DS Automobiles</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="34">Ferrari</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="35">Fiat</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="36">Fisker</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="37">Ford</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="38">GAC Gonow</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="39">Gemballa</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="40">GMC</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="41">Grecav</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="42">Hamann</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="43">Holden</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="44">Honda</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="45">Hummer</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="46">Hyundai</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="47">Infiniti</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="48">Isuzu</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="49">Iveco</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="50">Jaguar</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="51">Jeep</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="52">Kia</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="53">Königsegg</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="54">KTM</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="55">Lada</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="56">Lamborghini</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="57">Lancia</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="58">Land Rover</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="59">Landwind</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="60">Lexus</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="61">Ligier</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="62">Lincoln</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="63">Lotus</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="64">Mahindra</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="65">Maserati</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="66">Maybach</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="67">Mazda</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="68">McLaren</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="69">Mercedes-Benz</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="70">MG</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="71">Microcar</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="72">MINI</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="73">Mitsubishi</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="74">Morgan</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="75">Nissan</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="76">NSU</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="77">Oldsmobile</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="78">Opel</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="79">Pagani</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="80">Peugeot</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="81">Piaggio</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="82">Plymouth</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="83">Pontiac</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="84">Porsche</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="85">Proton</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="86">Renault</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="87">Rolls-Royce</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="88">Rover</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="89">Ruf</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="90">Saab</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="91">Santana</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="92">Seat</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="93">Skoda</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="94">Smart</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="95">speedART</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="96">Spyker</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="97">Ssangyong</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="98">Subaru</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="99">Suzuki</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="100">Talbot</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="101">Tata</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="102">TECHART</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="103">Tesla</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="104">Toyota</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="105">Trabant</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="106">Triumph</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="107">TVR</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="108">Volkswagen</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="109">Volvo</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="110">Wartburg</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="111">Westfield</a><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="112">Wiesmann</a></li></ul>
+													</li>
+
+													<li class="static model items_cnt" data-trans_field="model_id" data-ini_text="Модели" style="display: none;">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Модели</a><span class="hd">Модели</span>            <ul id="model_dropdown" class="f16" style="left: -340px; right: -29.8px;"></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="transmiss_id" data-ini_text="Трансмиссия">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Трансмиссия</a><span class="hd">Трансмиссия</span>            <ul><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="239">Автоматическая КП</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="237">Механическая коробка передач</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="238">Полуавтоматическая КП</a></li></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="fuel_id" data-ini_text="Топливо">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Топливо</a><span class="hd">Топливо</span>            <ul><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="273">Бензиновый</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="279">Водород</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="281">Гибрид (дизельный / электрический)</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="278">Гибридный (бензин/электричество)</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="274">Дизельный</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="282">Иное</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="276">Природный газ</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="275">Сжиженный нефтяной газ</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="277">Электрический</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="280">Этанол (FFV, E85 и т.п.)</a></li></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="interior_id" data-ini_text="Интерьер">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Интерьер</a><span class="hd">Интерьер</span>            <ul><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="265">Алькантара</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="264">Велюр</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="266">Другое</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="263">Обивка</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="261">Полностью из кожи</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="262">Частично из кожи</a></li></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="climate_id" data-ini_text="Климат">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Климат</a><span class="hd">Климат</span>            <ul><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="209">Автоматический кондиционер</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="207">Без климатической установки</a></li><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="208">Ручное управление климатом</a></li></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="wheel_id" data-ini_text="Колесная формула" style="display: none;">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Колесная формула</a><span class="hd">Колесная формула</span>            <ul></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="emission_id" data-ini_text="Класс экологической безопасности">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Класс экологической безопасности</a><span class="hd">Класс экологической безопасности</span>            <ul><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="537">Евро4</a></li></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="sticker_id" data-ini_text="Экологическая наклейка">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Экологическая наклейка</a><span class="hd">Экологическая наклейка</span>            <ul><li><a href="http://mobile.vlad-tests.ru/ru/cars#" data-id="538">4 (Зеленый)</a></li></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="cab_id" data-ini_text="Кабина" style="display: none;">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Кабина</a><span class="hd">Кабина</span>            <ul></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="axle_id" data-ini_text="Оси" style="display: none;">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Оси</a><span class="hd">Оси</span>            <ul></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="bunk_id" data-ini_text="Количество спальных мест" style="display: none;">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Количество спальных мест</a><span class="hd">Количество спальных мест</span>            <ul></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="hydraulic_id" data-ini_text="Гидравлическое устройство" style="display: none;">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Гидравлическое устройство</a><span class="hd">Гидравлическое устройство</span>            <ul></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="length_id" data-ini_text="Габаритная длина автомобиля" style="display: none;">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Габаритная длина автомобиля</a><span class="hd">Габаритная длина автомобиля</span>            <ul></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="licweight_id" data-ini_text="Разрешенный вес" style="display: none;">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Разрешенный вес</a><span class="hd">Разрешенный вес</span>            <ul></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="load_id" data-ini_text="Грузоподъемность" style="display: none;">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Грузоподъемность</a><span class="hd">Грузоподъемность</span>            <ul></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="seat_id" data-ini_text="Количество мест" style="display: none;">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Количество мест</a><span class="hd">Количество мест</span>            <ul></ul>
+													</li>
+
+													<li class="items_cnt" data-trans_field="length" data-ini_text="Длина" style="display: none;">
+														<a href="http://mobile.vlad-tests.ru/ru/cars#" class="rod parent">Длина</a><span class="hd">Длина</span>            <ul></ul>
+													</li>
+
+												</ul>
+											</div>
+
+
+
+
+
+										</div>
+									</div>
+									<div class="clear"></div>
+
+								</form>
+
+
+							</div>
+						</div>
+
+
+						<div class="container">
+							<div class="tags" id="taags">
+								<nav class="mobmenu">
+									
+									
+	</nav>
+	<div class="total">
+		Всего <span> 120 </span> &nbsp;             Фильтр <span> 35 </span>         </div>
+		<ul>
+			<li>#Toyota </li>
+			<li>#Auris</li>
+			<li># 2003</li>
+			<li># 2004</li>
+			<li># 2005</li>	
+		</ul>
+		<div id="map_link_cnt1" class="map-btn main">
+							<a href="http://mobile.vlad-tests.ru/ru/cars#">
+									<svg class="login-pic" width="23" height="25">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#placeholder" />
+									</svg>На карте
+							</a>
+						</div>
+		<div id="map_link_cnt2" class="map-btn mobile">
+							<a href="http://mobile.vlad-tests.ru/ru/cars#">
+									<svg class="login-pic" width="23" height="25">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#placeholder" />
+									</svg>На карте
+							</a>
+						</div>
+	</div>
+
+	<div class="content content_100">
+		<div class="catalog">
+			<div id="listview_pjax" data-pjax-container="" data-pjax-push-state="" data-pjax-timeout="1000">
+				<div id="w0" class="list-view">
+
+					<div class="item" data-trans_id="32" data-user_id="7">
+						<div class="images" style="position:relative;" data-photos="main_sm_577a4d6830e8a,sm_577a4d690e404,sm_577a4d6ac8195,sm_577a4d6c3b74a,sm_577a4d6ced2e2,sm_577a4d6e5f7b8,sm_577a4d704b3b9,sm_577a4d71bbc7e">
+							<span class="prev"></span>
+							<span class="next"></span>
+
+							<img class="real" src="./add_files/sm_577a4d704b3b9.jpg" alt="">
+							<!-- Paused text and Resume button -->
+						</div>
+
+						<div class="info">
+
+							<h2><a href="http://mobile.vlad-tests.ru/ru/site/details?trans_id=32" data-pjax="0">Suzuki Grand Vitara</a></h2>
+
+							<div class="cost">
+								<b>9 999</b>
+								<span class="euro"> € </span>
+								<span class="nds"> без НДС </span>
+							</div>
+							<div class="info-line"><span>2007 3000 000 km</span></div>
+							<div class="info-line"><span>3.0L Бензин</span></div>
+							<div class="info-line"><span>Автомат. Полный привод</span></div>
+							<div class="info-line"><span>Матерчитый</span></div>
+							<div class="info-line"><span>Климатконтроль</span></div>
+							<div class="actions">
+								<a href="#" class="actions__item">
+									<svg class="manager__skype-pic" width="16" height="16">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#placeholder" />
+									</svg>
+									DE 64846, Gross-Zimmern</a>
+								<a href="#" class="actions__item actions__item_bookmarks">
+									<svg class="manager__skype-pic" width="16" height="16">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#bookmark-outline" />
+									</svg>
+									В закладки
+								</a>
+							</div>
+							<!-- <div class="info-line location"> 64846 Waldstraße 35</div> -->
+
+						</div><!-- class="info">-->
+							<div class="man-right">
+								<div class="manager">
+										<a href="#" title="" class="manager__piclink">
+											<img  cl class="manager__picture" src="./add_files/elena.jpg" width="80" height="80" alt="">
+										</a>
+										<p class="manager__name">Elena Brjuchovic</p>
+										<span class="manager__languages">Eng, Deu, Rus, Esp</span>
+										<p class="manager__firm">MobileMakler</p>
+										<p class="manager__contacts"> 
+											<a class="manager__link-cont" href="tel:+4906071392273">
+												+49 (0) 607 139 22 73 <i class="manager__viber"></i> <i class="manager__what"></i>
+											</a>
+										</p>
+										<p class="manager__contacts">
+											<a class="manager__link-cont" href="tel:+4906071392273">
+												+49 (0) 607 139 22 73
+											</a>
+										</p>
+										<p class="manager__contacts">
+											<a class="manager__link-cont" href="skype:MobileMakler.com?call"> 
+												<svg class="manager__skype-pic" width="16" height="13">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#skype" />
+												</svg>
+												MobileMakler.com
+											</a> 
+										</p>
+										<p class="manager__contacts manager__contacts_mail">
+											<a class="manager__link-cont manager__link-cont_mail" href="mailto:MobileMakler@gmail.com"> 
+												<svg class="manager__skype-pic" width="16" height="16">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#envelope" />
+												</svg>
+												Отправить сообщение
+											</a> 
+										</p>
+								</div> <!-- class="manager"> -->
+							</div>	<!-- class="man-right"> -->
+					</div> <!--class="item"-->
+
+					<div class="item" data-trans_id="32" data-user_id="7">
+						<div class="images" style="position:relative;" data-photos="main_sm_577a4d6830e8a,sm_577a4d690e404,sm_577a4d6ac8195,sm_577a4d6c3b74a,sm_577a4d6ced2e2,sm_577a4d6e5f7b8,sm_577a4d704b3b9,sm_577a4d71bbc7e">
+							<span class="prev"></span>
+							<span class="next"></span>
+
+							<img class="real" src="./add_files/sm_577a4d704b3b9.jpg" alt="">
+							<!-- Paused text and Resume button -->
+						</div>
+
+						<div class="info">
+
+							<h2><a href="http://mobile.vlad-tests.ru/ru/site/details?trans_id=32" data-pjax="0">Suzuki Grand Vitara</a></h2>
+
+							<div class="cost">
+								<b>9 999</b>
+								<span class="euro"> € </span>
+								<span class="nds"> без НДС </span>
+							</div>
+							<div class="info-line"><span>2007 3000 000 km</span></div>
+							<div class="info-line"><span>3.0L Бензин</span></div>
+							<div class="info-line"><span>Автомат. Полный привод</span></div>
+							<div class="info-line"><span>Матерчитый</span></div>
+							<div class="info-line"><span>Климатконтроль</span></div>
+							<div class="actions">
+								<a href="#" class="actions__item">
+									<svg class="manager__skype-pic" width="16" height="16">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#placeholder" />
+									</svg>
+									DE 64846, Gross-Zimmern</a>
+								<a href="#" class="actions__item actions__item_bookmarks">
+									<svg class="manager__skype-pic" width="16" height="16">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#bookmark-outline" />
+									</svg>
+									В закладки
+								</a>
+							</div>
+							<!-- <div class="info-line location"> 64846 Waldstraße 35</div> -->
+
+						</div><!-- class="info">-->
+							<div class="man-right">
+								<div class="manager">
+										<a href="#" title="" class="manager__piclink">
+											<img  cl class="manager__picture" src="./add_files/elena.jpg" width="80" height="80" alt="">
+										</a>
+										<p class="manager__name">Elena Brjuchovic</p>
+										<span class="manager__languages">Eng, Deu, Rus, Esp</span>
+										<p class="manager__firm">MobileMakler</p>
+										<p class="manager__contacts"> 
+											<a class="manager__link-cont" href="tel:+4906071392273">
+												+49 (0) 607 139 22 73 <i class="manager__viber"></i> <i class="manager__what"></i>
+											</a>
+										</p>
+										<p class="manager__contacts">
+											<a class="manager__link-cont" href="tel:+4906071392273">
+												+49 (0) 607 139 22 73
+											</a>
+										</p>
+										<p class="manager__contacts">
+											<a class="manager__link-cont" href="skype:MobileMakler.com?call"> 
+												<svg class="manager__skype-pic" width="16" height="13">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#skype" />
+												</svg>
+												MobileMakler.com
+											</a> 
+										</p>
+										<p class="manager__contacts manager__contacts_mail">
+											<a class="manager__link-cont manager__link-cont_mail" href="mailto:MobileMakler@gmail.com"> 
+												<svg class="manager__skype-pic" width="16" height="16">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#envelope" />
+												</svg>
+												Отправить сообщение
+											</a> 
+										</p>
+								</div> <!-- class="manager"> -->
+							</div>	<!-- class="man-right"> -->
+					</div> <!--class="item"-->
+
+					<div class="item" data-trans_id="32" data-user_id="7">
+						<div class="images" style="position:relative;" data-photos="main_sm_577a4d6830e8a,sm_577a4d690e404,sm_577a4d6ac8195,sm_577a4d6c3b74a,sm_577a4d6ced2e2,sm_577a4d6e5f7b8,sm_577a4d704b3b9,sm_577a4d71bbc7e">
+							<span class="prev"></span>
+							<span class="next"></span>
+
+							<img class="real" src="./add_files/sm_577a4d704b3b9.jpg" alt="">
+							<!-- Paused text and Resume button -->
+						</div>
+
+						<div class="info">
+
+							<h2><a href="http://mobile.vlad-tests.ru/ru/site/details?trans_id=32" data-pjax="0">Suzuki Grand Vitara</a></h2>
+
+							<div class="cost">
+								<b>9 999</b>
+								<span class="euro"> € </span>
+								<span class="nds"> без НДС </span>
+							</div>
+							<div class="info-line"><span>2007 3000 000 km</span></div>
+							<div class="info-line"><span>3.0L Бензин</span></div>
+							<div class="info-line"><span>Автомат. Полный привод</span></div>
+							<div class="info-line"><span>Матерчитый</span></div>
+							<div class="info-line"><span>Климатконтроль</span></div>
+							<div class="actions">
+								<a href="#" class="actions__item">
+									<svg class="manager__skype-pic" width="16" height="16">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#placeholder" />
+									</svg>
+									DE 64846, Gross-Zimmern</a>
+								<a href="#" class="actions__item actions__item_bookmarks">
+									<svg class="manager__skype-pic" width="16" height="16">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#bookmark-outline" />
+									</svg>
+									В закладки
+								</a>
+							</div>
+							<!-- <div class="info-line location"> 64846 Waldstraße 35</div> -->
+
+						</div><!-- class="info">-->
+							<div class="man-right">
+								<div class="manager">
+										<a href="#" title="" class="manager__piclink">
+											<img  cl class="manager__picture" src="./add_files/elena.jpg" width="80" height="80" alt="">
+										</a>
+										<p class="manager__name">Elena Brjuchovic</p>
+										<span class="manager__languages">Eng, Deu, Rus, Esp</span>
+										<p class="manager__firm">MobileMakler</p>
+										<p class="manager__contacts"> 
+											<a class="manager__link-cont" href="tel:+4906071392273">
+												+49 (0) 607 139 22 73 <i class="manager__viber"></i> <i class="manager__what"></i>
+											</a>
+										</p>
+										<p class="manager__contacts">
+											<a class="manager__link-cont" href="tel:+4906071392273">
+												+49 (0) 607 139 22 73
+											</a>
+										</p>
+										<p class="manager__contacts">
+											<a class="manager__link-cont" href="skype:MobileMakler.com?call"> 
+												<svg class="manager__skype-pic" width="16" height="13">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#skype" />
+												</svg>
+												MobileMakler.com
+											</a> 
+										</p>
+										<p class="manager__contacts manager__contacts_mail">
+											<a class="manager__link-cont manager__link-cont_mail" href="mailto:MobileMakler@gmail.com"> 
+												<svg class="manager__skype-pic" width="16" height="16">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#envelope" />
+												</svg>
+												Отправить сообщение
+											</a> 
+										</p>
+								</div> <!-- class="manager"> -->
+							</div>	<!-- class="man-right"> -->
+					</div> <!--class="item"-->
+				</div> <!-- class="list-view" -->
+			</div> <!-- id="listview_pjax" -->
+			<br>
+		</div>  <!--div class="catalog"-->
+	</div>  <!--div class="content"-->
+
+	
+				</div>  <!--div class="container"-->
+
+
+<div style="clear:both">
+										<a href="ffg" class="linkminf">
+											<svg class="placeholder" width="47px" height="47px">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./add_files/allsvg.svg#placeholder"></use>
+											</svg>
+										</a><a href="ffg" class="linkminf">
+										<svg class="euro" width="29px" height="29px">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./add_files/allsvg.svg#euro"></use>
+										</svg>
+									</a><a href="ffg" class="linkminf">
+									<svg class="burger" width="40px" height="40px">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#burger"></use>
+									</svg>
+								</a><a href="ffg" class="linkminf">
+								<svg class="bookmark-outline" width="40" height="40">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#bookmark-outline"></use>
+								</svg>
+							</a><a href="ffg" class="linkminf">
+							<svg class="envelope" width="39.474px" height="39.474px">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#envelope"></use>
+							</svg>
+							<span></span></a><a href="ffg" class="linkminf">
+							<svg class="christmas-present" width="44px" height="44">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#christmas-present"></use>
+							</svg>
+						</a><a href="ffg" class="linkminf">
+						<svg class="login" width="49" height="49">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#login"></use>
+						</svg>
+					</a><a href="ffg" class="linkminf">
+					<svg class="avatar" width="48" height="48">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#avatar"></use>
+					</svg>
+				</a><a href="ffg" class="linkminf">
+				<svg class="skype" width="40" height="40">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="add_files/allsvg.svg#skype"></use>
+				</svg>
+			</a>
+
+		</div> 
+
+			</div> 
+
+
+
+			<div class="footer">
+				<div class="container">
+					<p>© 2016  <a href="http://mobile.vlad-tests.ru/ru/cars"> Соглашения </a></p>
+					<div class="social">
+						<ul>
+							<li class="fb"><a href="http://mobile.vlad-tests.ru/ru/cars"></a></li>
+							<li class="tw"><a href="http://mobile.vlad-tests.ru/ru/cars"></a></li>
+							<li class="goo"><a href="http://mobile.vlad-tests.ru/ru/cars"></a></li>
+						</ul>
+					</div>
+					<p class="right"><a href="http://mobile.vlad-tests.ru/ru/cars#mpp" rel="m_PageScroll2id"> Контакты </a>, <a href="http://mobile.vlad-tests.ru/ru/cars#"> impressum</a></p>
+				</div>
+			</div>
+		</div>
+
+		<script src="./add_files/jquery111.min.js"></script>
+		<script src="./add_files/nslide.js"></script>
+		<script src="./add_files/callbacks.js"></script>
+		<script src="./add_files/jquery-ias.js"></script>
+		<script src="./add_files/history.js"></script>
+		<script src="./add_files/noneleft.js"></script>
+		<script src="./add_files/paging.js"></script>
+		<script src="./add_files/spinner.js"></script>
+		<script src="./add_files/trigger.js"></script>
+		<script src="./add_files/yii.js"></script>
+		<script src="./add_files/jquery.pjax.js"></script>
+		<script src="./add_files/start.js"></script>
+		<script src="./add_files/adap_m.js"></script>
+		<script src="./add_files/main.js"></script>
+		<script src="./add_files/jshashtable-2.1_src.js"></script>
+		<script src="./add_files/jquery.numberformatter-1.2.3.js"></script>
+		<script src="./add_files/tmpl.js"></script>
+		<script src="./add_files/jquery.dependClass-0.1.js"></script>
+		<script src="./add_files/draggable-0.1.js"></script>
+		<script src="./add_files/jquery.dd.min.js"></script>
+		<script src="./add_files/jquery.scrollTo.min.js"></script>
+		<script src="./add_files/responsive-nav.js"></script>
+		<script src="./add_files/jquery.slider.js"></script>
+		<script src="./add_files/jquery.sticky-kit.min.js"></script>
+		<script src="./add_files/fotorama.js"></script>
+		<script type="text/javascript">jQuery(document).ready(function () {
+
+			$("body").on("click", "#dropdowns_cnt ul ul a", function(e) {
+				e.preventDefault();
+
+				if ($(this).hasClass("parent")) {
+					$(this).closest("ul").children("li").removeClass("hover");
+					$(this).parent().addClass("hover");
+				}
+				else {
+					var trans_field = $(this).closest("li.items_cnt").attr("data-trans_field");
+					var input = "#trans-" +trans_field;
+					$(input).val($(this).attr("data-id"));
+					$(this).closest("li.items_cnt").children("a.rod").html($(this).text());
+					$("#dropdowns_cnt li").removeClass('hover');
+
+					if (trans_field == "brand_id") {
+						var title = $("#model_dropdown").parent("li").attr("data-ini_text");
+						$("#model_dropdown").siblings("a").text(title);
+						$("#trans-model_id").val(0);
+						fillModelDropDown($(this).attr("data-id"));
+					}
+				}
+			});
+
+
+			function fillDropDowns(cat_id, brand_id, setDropdownTitles, getYearMonth) {
+				var add_new_model = false;
+
+				if (brand_id == undefined)
+					brand_id = "";
+				if (setDropdownTitles == undefined)
+					setDropdownTitles = false;
+				if (getYearMonth == undefined)
+					getYearMonth = 0;
+
+
+			}
+
+			function fillDropDowns_step2(data, setDropdownTitles) {
+				if (setDropdownTitles == undefined)
+					setDropdownTitles = false;
+
+				$("#dropdowns_cnt > ul > li").each(function(index, item) {
+					var item = $(item);
+					item.children("a").text(item.attr("data-ini_text"));
+
+					var key = item.attr("data-trans_field");
+					if (key in data)
+						item.show().children("ul").html(data[key]);
+					else
+						item.hide().children("ul").html("");
+				});
+
+				// Dropdown Titles
+				if (setDropdownTitles) {
+					$("#dropdowns_cnt li.items_cnt").each(function(index, item) {
+						var item = $(item);
+								var model_val = $("#trans-" +item.attr("data-trans_field")).val();     // trans-fuel_id, trans-model_id ... etc
+
+								if (model_val != "0" && model_val != "") {
+									var link = item.find("[data-id=" +model_val +"]");
+									if (link.length == 1)
+										item.children("a.parent").text(link.text());
+								}
+							});
+				}
+
+				$("#dropdowns_cnt").show();
+			}
+
+
+			function fillModelDropDown(brand_id) {
+				var add_new_model = false;
+
+
+			}
+
+
+
+			$("#trans-slider_years").slider({from: 2002, to: 2012, limits: false, step: 1});
+			$("#trans-slider_prices").slider({from: 2000, to: 10000, step: 1000, dimension: '&nbsp;€'});
+			var o = $("#trans-country_code").msDropdown({visibleRows: 13}).data("dd").setIndexByValue("");
+
+		// Functions fillDropDowns() & fillModelDropDown()
+		// $("body").on("click", "#dropdowns_cnt ul ul a")
+		// are in /views/layouts/_dropdown_filter_panel.php
+		var cat_id = 1;
+		var model_id = $("#trans-model_id").val();
+		var brand_id = (model_id == "" || model_id == "0") ? "" : $("#trans-brand_id").val();
+		fillDropDowns(cat_id, brand_id, true);
+		$("#dropdowns_cnt").css("visibility", "visible");
+
+
+		$("#btn_reset_filters").on("click", function() {
+				// Country
+				$('#trans-country_code').msDropDown().data("dd").set("value", "");
+
+				// Years, Prices, NDS
+				var years = $("#trans-slider_years").attr("data-ini_value").split(";");
+				var prices = $("#trans-slider_prices").attr("data-ini_value").split(";");
+				$("#trans-slider_years").slider("value", years[0], years[1]);
+				$("#trans-slider_prices").slider("value", prices[0], prices[1]);
+				$("#trans-nds_only").prop("checked", false);
+
+				// Dropdown filters
+				$("#dropdowns_cnt li.items_cnt").each(function(index, el) {
+					$(el).children("a").text($(el).attr("data-ini_text"));
+				});
+				$("#filter_form_hidden_inputs_cnt").children("input:hidden").val("");
+				$("#filter_form").submit();
+			});
+
+
+		var w1_ias = jQuery.ias({"container":".list-view","item":".item","pagination":".list-view .pagination","next":".next a","delay":600,"negativeMargin":10});
+		w1_ias.extension(new IASPagingExtension(""));
+		w1_ias.extension(new IASSpinnerExtension({"html":"<div class=\"ias-spinner\" style=\"text-align: center;\"><img src=\"{src}\"/></div>"}));
+		w1_ias.extension(new IASNoneLeftExtension({"text":"","html":"<div class=\"ias-noneleft\" style=\"text-align: center;\">{text}</div>"}));
+		jQuery(document).pjax("#listview_pjax a", "#listview_pjax", {"push":true,"replace":false,"timeout":1000,"scrollTo":false});
+		jQuery(document).on('submit', "#listview_pjax form[data-pjax]", function (event) {jQuery.pjax.submit(event, '#listview_pjax', {"push":true,"replace":false,"timeout":1000,"scrollTo":false});});
+
+		// Map. #filter_form is in _proposal_slider.php
+		$("#map_link_cnt1 a, #map_link_cnt2 a").on("click", function(e) {
+			e.preventDefault();
+			$("#filter_form").attr("action", "/ru/cars?map=1").submit();
+		});
+
+
+		
+				// Remember Me
+				$("#dfd_label").on("click", function() {
+					var new_val = ($("#dfd").val() == "0") ? "1" : "0";
+					$("#dfd").val(new_val);
+				});
+
+				//открываем форму входа по LOGIN кнопке
+				$("#login").click(function(evv) {
+					evv.preventDefault();
+					var login_mode = ($(".hid").css("display") != "none");
+
+					if (!login_mode) {
+						$(".hid").fadeIn().children(".error").hide();
+					}
+					else if($("#loginform-email").val()=="" || $("#loginform-password").val()=="") {
+						$(".hid").fadeOut();
+					}
+					else {
+						$.ajax({
+							url: "/ru/user/login",
+							type: "post",
+							dataType: "html",
+							data: $("#loginform").serialize(),
+							success: function(response) {
+								if (response == "ok") {
+									window.location.reload(true);
+								} else {
+									var n = noty({
+										text: response,
+										layout: 'top',
+										closeWith: ['click', 'button'],
+										type: 'warning',
+										theme: 'relax',
+									});
+								}
+							}
+						});
+					}
+						//$(".reg-block .registration-link a.zabil").css( "display", "block");
+						//$(".reg-block .registration-link.rega.pad").toggleClass("pad");
+						//$("#login a").addClass( "act" );
+						// $(".registration-link.rega").toggleClass( "sds");
+					});
+
+				$("#avtor").click(function(bbb) {
+					bbb.preventDefault();
+					$(".reg-block.w2").hide();
+					$(".reg-block.w1").show();
+				});
+
+
+				//открываем форму забыли пароль
+				$("#zabil").click(function(evv) {
+					evv.preventDefault();
+					$(".reg-block.w2").fadeToggle();
+					$(".w1").hide();
+				});
+
+				$("#recoveryform_btnok").on("click", function(e) {
+					e.preventDefault();
+					if ($(this).prev(".bigmail").val() == "")
+						return false;
+
+					$.ajax({
+						url: "/user/forgot-pass?lang=ru",
+						type: "post",
+						dataType: "html",
+						data: $("#recoveryform").serialize(),
+						success: function(response) {
+							var n = noty({
+								text: response,
+								layout: 'top',
+								closeWith: ['click', 'button'],
+								type: 'warning',
+								theme: 'relax',
+							});
+						}
+					});
+				});
+
+
+
+				var nav = responsiveNav("#nav", { // Selector
+						animate: true, // Boolean: Use CSS3 transitions, true or false
+						transition: 400, // Integer: Speed of the transition, in milliseconds
+						label: "Menu", // String: Label for the navigation toggle
+						insert: "before", // String: Insert the toggle before or after the navigation
+						customToggle: "", // Selector: Specify the ID of a custom toggle
+						closeOnNavClick: false, // Boolean: Close the navigation when one of the links are clicked
+						openPos: "relative", // String: Position of the opened nav, relative or static
+						navClass: "nav-collapses", // String: Default CSS class. If changed, you need to edit the CSS too!
+						navActiveClass: "js-nav-active", // String: Class that is added to <html> element when nav is active
+						jsClass: "js", // String: 'JS enabled' class which is added to <html> element
+						init: function(){}, // Function: Init callback
+						open: function(){}, // Function: Open callback
+						close: function(){} // Function: Close callback
+					});
+
+
+				});</script>
+
+			</body></html>

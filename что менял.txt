@@ -1,0 +1,39 @@
+—айта —качал с »нета так что css\js\html актуальные , только ѕ”“» конечно похерелись.
+ѕисать номер строчки смысла нет, не совпадет, буду писать классы и описывать что куда..
+
+add.html : 
+
+1 перенес <form id="filter_form" action="http://mobile.vlad-tests.ru/ru/cars" method="post">
+<input type="hidden" name="_csrf" value="cXMxY19DVEgyNgAKBQo6ODcGfCYnejckAxFWOiUMNh87HF4la3QNew==">
+    <div class="sliders-block down">
+        <div class="year-slider">
+            <select id="trans-country_code"
+
+<select id="trans-country_code" ..... вот это все рад€ом с логином его в 
+
+
+<div class="logo">
+            <a href="http://mobile.vlad-tests.ru/"></a>
+        </div> 
+	<select id="trans-country_code"...
+справа от логотипа вообщем
+
+
+
+
+2. в <li class="registration-link rega pad"> добавил новую векторную иконку свг  <svg class="avatar" width="20" height="22">....
+
+3. в class="registra" вставил свг иконку http://clip2net.com/s/3Bbx1p9
+
+4. аналог 3го пункта - но только логин - вход <li class="login-link" id="login"><a href="http://mobile.vlad-tests.ru/ru/cars#"><svg ...
+5. id="map_link_cnt1" и map_link_cnt2 вставил 2 svg  и перенес в <div class="total"> 
+
+6. body добавил класс class="fon-new"
+7. удалил <aside class="itm_cars side_rec">...
+8. добавил в <div class="content"> -- <div class="content content_100"> класс
+
+9. добавил <ul id="w0" class="nav nav-tabs nav-tabs_my"> перед id="dropdowns_cnt"
+
+10.<div class="item" data-trans_id="32" data-user_id="7"> вотэ эти все классы и весь html внутри »’ лучше заного вставить
+
+CSS - будем просто заливать css с моего компа на сайта, ѕ–≈ƒ¬ј–»“≈ќЋ№Ќќ выправив все ѕ”“» к  артинкам - замена в редакторе там легко.
