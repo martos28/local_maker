@@ -14,6 +14,12 @@
 .reg-block   {
     display: none;
 }
+.tags .total, #map_link_cnt2 {
+    display: none;
+}
+.is-sticky .tags .total, .is-sticky #map_link_cnt2 {
+    display: none;
+}
 .dd {
    float: left;
     z-index: 500;
@@ -1343,17 +1349,6 @@ ul.nav2 li.static.hover ul.f16 {
     .filter .down {
      /* display: none;*/
     }
-.show_filt {
-    background: url(" show_f.png") no-repeat 0px 0px;
-    display: block;
-    height: 34px;
-    position: absolute;
-    right: 94px;
-    display: none;
-    top: -3px;
-    cursor: pointer;
-    width: 38px;
-}
 
 .filter-menu {
   height: 90px ; position: relative;
@@ -1556,13 +1551,13 @@ position: absolute;
     .checkbox  input[type="checkbox"] + label {
      color: #777777;
     font-size:12px;
-       margin-left: -15px
+       margin-left: -1px
 }
     .tags{
-     margin: 6px 0 6px 0;
+     margin: 0px 0 6px 0;    padding-left: 97px;
     }
     .tags ul {
-      margin-top: 4px;
+      margin-top: 0px;
     }
 
    .tags li {

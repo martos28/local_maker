@@ -36,4 +36,29 @@ add.html :
 
 10.<div class="item" data-trans_id="32" data-user_id="7"> вотэ эти все классы и весь html внутри ИХ лучше заного вставить
 
+11. новый <script src="./add_files/jquery.sticky.js"></script> 
+
+12 . новое <script type="text/javascript">jQuery(document).ready(function () {
+
+			 $(".header").sticky({topSpacing:0});
+			 $("#filt").sticky({topSpacing:106});
+13. удалил из html .mobmenu - совсем
+
+14. перенес <div class="tags" id="taags"> и содержимое в  самый низ
+<div class="filter" id="filt">
+	<div class="container">
+
+15. изменил <div class="show_filt"  сейчас это <div class="show_filtY" id="show_filtos">Фильтр</div>
+16. добавил в файлы и в html 
+jquery.fancybox.css
+jquery.fancybox.pack.js
+blank.gif
+fancybox_loading.gif
+fancybox_loading@2x.gif
+fancybox_overlay.png
+fancybox_sprite.png
+fancybox_sprite@2x.png
+
+16. инлайн модальный окна перед </body>
+
 CSS - будем просто заливать css с моего компа на сайта, ПРЕДВАРИТЕОЛЬНО выправив все ПУТИ к Картинкам - замена в редакторе там легко.

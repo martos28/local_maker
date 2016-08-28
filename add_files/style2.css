@@ -75,6 +75,156 @@ ul {
     z-index: 10;
 
 }
+
+.modal-avtoris {
+    max-width: 300px;
+    background-color: #414649;
+    padding: 40px;
+    display: none;
+}
+.modal-avtoris2 {
+    max-width: 340px;
+    background-color: #414649;
+    padding: 20px;
+    border:1px solid #ccc;
+    display: none;
+}
+.form-mod {
+
+}
+.form-mod__field {
+     width: 100%;
+     margin-bottom: 20px;
+     border:0 none;
+     outline:0 none;
+    height: 30px;
+    padding: 0 10px;
+    background-color: #eff4f4;
+    border-radius: 4px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+}
+div.form-mod__checkbox {
+    position: relative;
+    left: 0;
+    top: 0;
+
+}
+@media screen and (max-width: 768px) {
+.checkbox.form-mod__checkbox input[type="checkbox"] + label .pseudo-checkbox {
+    margin-left: 0px;
+    }
+}
+
+.form-mod__field_marg {
+    margin-bottom: 12px;
+}
+
+.form-mod__remembox {
+
+}
+.form-mod__label-text  {
+    font-size: 18px;
+    color:#bebebd;
+}
+.form-mod__remembutton {
+    height: 30px;
+    background-color: #bebebd;
+    border-radius: 3px;
+    text-align: center;
+    color: #010101;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    border:0 none;
+    margin: 14px 0 16px 0;
+     outline:0 none;
+     width: 100%;
+     -webkit-transition: background-color 0.3s;
+     transition: background-color 0.3s;
+}
+.form-mod__remembutton:hover {
+    background-color: #e2e2e2;
+}
+.form-mod__remembutton:active {
+    position: relative
+    top: 1px;
+}
+.form-mod__resetpass-title {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 23px;
+}
+.form-mod__forgot-link {
+    font-size: 18px;
+    color:#bebebd;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: color 0.3s;
+     transition: color 0.3s;
+}
+.form-mod__forgot-link:hover {
+    color:#fff
+}
+button.form-mod__sendbutton {
+    font-size: 18px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    width: 100%;
+}
+button.form-mod__sendbutton:hover {
+  background-color: #a7d21b;
+}
+button.form-mod__sendbutton:active {
+    transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.3);
+}
+.form-mod__namefield_area {
+    height: 141px;
+    width: 100%;
+}
+.form-mod__ovf {
+    overflow: hidden;
+}
+.form-mod__namefield {
+    color: #777;
+    font-size: 15px;
+    font-family: 'PT Sans', sans-serif;
+}
+.form-mod__ll, .form-mod__rr {
+    width: 50%;
+    float: left;
+}
+.is-sticky #nav li a i {
+    display: none;
+}
+@media screen and (min-width: 992px) {
+    #sticky-wrapper {
+    height: auto !important;
+}
+ #sticky-wrapper.is-sticky .header {
+    padding-top: 12px;
+    height: 75px !important
+} 
+.is-sticky .dd {
+    margin-left: 5px; 
+} 
+
+.is-sticky .logo {
+    width: 37px;
+    background-size: 414%;
+    height: 40px;
+        left: 0%;
+    top: -6px;
+} 
+}
 .logo a {
     width: 100%;
     height: 100%;
@@ -84,6 +234,15 @@ ul {
     clear: both;
     background: #42474a;
     padding: 20px 0 8px 0;
+    z-index: 201;
+    transition: all 0.3s;
+}
+
+#filt-sticky-wrapper {
+    z-index: 200 !important
+}
+.header {
+   z-index: 201 !important;  
 }
 .container {
     max-width: 940px;
@@ -103,6 +262,46 @@ ul {
 
 }
 
+.show_filtY {
+    background: url("show_f.png") no-repeat 0px 0px;
+    display: block;
+    height: 34px;
+    position: absolute;
+    left: 1px;
+    color: #00277a;
+    font-size: 18px;
+    bottom: 5px;
+    cursor: pointer;
+    width: 118px;
+    padding-left: 33px;
+    line-height: 27px;
+    z-index: 5;
+}
+#filter_form {
+    display: none;
+    height: 0;
+ 
+    width: 100%;
+
+    padding-bottom: 15px;
+    background-color: #E9EDF1;
+    z-index: 400;
+    transition: height 0.3s;
+}
+#filter_form.norm {
+    display: block;
+    height: auto;
+
+}
+.jslider .jslider-label  {
+    display:  none !important; 
+}
+
+@media screen and (max-width: 992px) {
+    .is-sticky .filter {
+        top: 67px !important
+    }
+}
 
 @media screen and (min-width: 992px) {
     #nav li.home a i {
@@ -194,7 +393,7 @@ ul {
     transition: all 0.2s;
 }
 .list-view {
-    padding: 34px 0px 25px 0px
+    padding: 18px 0px 25px 0px
 }
 
 #nav li.avtor a i {
@@ -428,13 +627,13 @@ text-decoration: none;
 .filter {
     width: 100%;
     background: #e9edf1;
-    padding: 30px 0 20px 0;
-    margin: 0 0 20px 0;
+    padding: 20px 0 8px 0;
+    margin: 0px 0 10px 0;
     position: relative;
-    z-index: 99;
+    z-index: 200 !important;
+    box-shadow: 1.1px 0.5px 6px rgba(0,0,0, 0.3);
 }
-.filter {
-}
+
 .img_h2 {
     font-size: 28px;
     margin: 21px 0 22px 0;
@@ -606,15 +805,19 @@ text-decoration: none;
 }
 
 .tags {
-    overflow: hidden;
-    clear: both;
-    margin: 20px 0;
+        clear: both;
+    margin: 0px 0;
+    position: relative;
+    padding-left: 120px;
+    height: 33px;
+    box-sizing: border-box;
 }
 .tags .total {
     float: left;
     font-size: 14px;
     color: #999;
-    margin: 0 30px 0 0;
+    margin: 0 0px 0 0;
+    width: 140px;
 }
 .tags span {
     color: #000;
@@ -1221,7 +1424,7 @@ background: url(' sprr.png') no-repeat -26px -4162px;
    transform: translateY(2px);
 }
 .manager__contacts_mail {
-    margin-top: 10px;
+    margin-top: 16px;
     color: #589eee;
 }
 .manager__link-cont_mail {
@@ -3340,9 +3543,7 @@ body {
     font-size: #777;
     font-size: 18px;
 }
-.show_filt {
-    display: none;
-}
+
 .logo_prof {
   width: 108px;
     height: 108px;
@@ -3419,7 +3620,7 @@ body {
     height: 46px;
     
     text-align: center;
-    top:-19px;
+    top:-17px;
     right: 0;
    
 }
