@@ -426,6 +426,84 @@
 
 		<a href="#avtoris" class="js-colorbox">Авторизация</a>
 		<a href="#send-msg" class="js-colorbox">Сообщение</a>
+		<a class="js-colorbox fancybox.iframe" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.8710870578025!2d40.3750443158142!3d43.446220873807434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDI2JzQ2LjQiTiA0MMKwMjInMzguMCJF!5e1!3m2!1sru!2sru!4v1472483537771">КАРТА</a>
+
+					<div class="item" data-trans_id="32" data-user_id="7">
+						<div class="images" style="position:relative;" data-photos="main_sm_577a4d6830e8a,sm_577a4d690e404,sm_577a4d6ac8195,sm_577a4d6c3b74a,sm_577a4d6ced2e2,sm_577a4d6e5f7b8,sm_577a4d704b3b9,sm_577a4d71bbc7e">
+							<span class="prev"></span>
+							<span class="next"></span>
+
+							<img class="real" src="./add_files/sm_577a4d704b3b9.jpg" alt="">
+							<!-- Paused text and Resume button -->
+						</div>
+
+						<div class="info">
+
+							<h2><a href="http://mobile.vlad-tests.ru/ru/site/details?trans_id=32" data-pjax="0">Suzuki Grand Vitara</a></h2>
+
+							<div class="cost">
+								<b>9 999</b>
+								<span class="euro"> € </span>
+								<span class="nds"> без НДС </span>
+							</div>
+							<div class="info-line"><span>2007 3000 000 km</span></div>
+							<div class="info-line"><span>3.0L Бензин</span></div>
+							<div class="info-line"><span>Автомат. Полный привод</span></div>
+							<div class="info-line"><span>Матерчитый</span></div>
+							<div class="info-line"><span>Климатконтроль</span></div>
+							<div class="actions">
+								<a href="#" class="actions__item">
+									<svg class="manager__skype-pic" width="16" height="16">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#placeholder" />
+									</svg>
+									DE 64846, Gross-Zimmern</a>
+								<a href="#" class="actions__item actions__item_bookmarks">
+									<svg class="manager__skype-pic" width="16" height="16">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark-outline" />
+									</svg>
+									В закладки
+								</a>
+							</div>
+							<!-- <div class="info-line location"> 64846 Waldstraße 35</div> -->
+
+						</div><!-- class="info">-->
+							<div class="man-right">
+								<div class="manager">
+										<a href="#" title="" class="manager__piclink">
+											<img  cl class="manager__picture" src="./add_files/elena.jpg" width="80" height="80" alt="">
+										</a>
+										<p class="manager__name">Elena Brjuchovic</p>
+										<span class="manager__languages">Eng, Deu, Rus, Esp</span>
+										<p class="manager__firm">MobileMakler</p>
+										<p class="manager__contacts"> 
+											<a class="manager__link-cont" href="tel:+4906071392273">
+												+49 (0) 607 139 22 73 <i class="manager__viber"></i> <i class="manager__what"></i>
+											</a>
+										</p>
+										<p class="manager__contacts">
+											<a class="manager__link-cont" href="tel:+4906071392273">
+												+49 (0) 607 139 22 73
+											</a>
+										</p>
+										<p class="manager__contacts">
+											<a class="manager__link-cont" href="skype:MobileMakler.com?call"> 
+												<svg class="manager__skype-pic" width="16" height="13">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#skype" />
+												</svg>
+												MobileMakler.com
+											</a> 
+										</p>
+										<p class="manager__contacts manager__contacts_mail">
+											<a class="manager__link-cont manager__link-cont_mail" href="mailto:MobileMakler@gmail.com"> 
+												<svg class="manager__skype-pic" width="16" height="16">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#envelope" />
+												</svg>
+												Отправить сообщение
+											</a> 
+										</p>
+								</div> <!-- class="manager"> -->
+							</div>	<!-- class="man-right"> -->
+					</div> <!--class="item"-->
 
 					<div class="item" data-trans_id="32" data-user_id="7">
 						<div class="images" style="position:relative;" data-photos="main_sm_577a4d6830e8a,sm_577a4d690e404,sm_577a4d6ac8195,sm_577a4d6c3b74a,sm_577a4d6ced2e2,sm_577a4d6e5f7b8,sm_577a4d704b3b9,sm_577a4d71bbc7e">
@@ -756,33 +834,57 @@
 		<script src="./add_files/jquery.fancybox.pack.js"></script>
 
  
-		<script type="text/javascript">jQuery(document).ready(function () {
+		<script type="text/javascript">$(document).ready(function () {
 
 			 $(".header").sticky({topSpacing:0, responsiveWidth: true});
 			 $("#filt").sticky({topSpacing:75, responsiveWidth: true});
+			  $('#filt').on('sticky-start', function() { console.log("Started"); });
+
+
+		// 	 $('#sticky-wrapper').on('sticky-start', function() { $("body").prepend("<div class='antiwrap'> </div"); console.log("Started");  });
+  // $('#sticky-wrapper').on('sticky-end', function() { $(".antiwrap").remove(); console.log("Ended"); });
+
 
 			 	$("#show_filtos").on("click", function() {
-					$("#filter_form").toggleClass('norm');
+					$("#filter_form").addClass("norm");
 					$("#filt").sticky('update');
+
 					$("#filter_form").sticky('update');
 					//$("#filt").sticky('update');
 				});
 
+			 		$(".nav2 li li a").on("click", function() {
+			 			$("#filt").sticky('update');
+			  });
 				$('.js-colorbox').fancybox({
 					padding: 0
 				});
 		
-			 	var lastScrollTop = 0;
-$(window).scroll(function(event){
-   var st = $(this).scrollTop();
-   if (st > lastScrollTop){
+			var lastScrollTop = 0;
+			$(window).scroll(function(event){
+   		var st = $(this).scrollTop();
+   		if (st > lastScrollTop){
        // downscroll code
+					function func1() {
+	        		$("#filter_form").addClass('norm').css({"transform":"translateY(-600px)", "height":"0", "overflow":"hidden"});
+	      				$("#filter_form").removeClass('norm');
+	      				//$("#filter_form").deros( $.debounce( 250, func1) );
+
+ //.resize( $.debounce( 250, true));
+
+	       	$("#sticky-wrapper, #filt-sticky-wrapper").addClass("hides");
+	       nav.close();
+				}
+				setTimeout(func1, 200);
+
    } else {
       // upscroll code
-      if ( $("#filter_form").hasClass( "norm" ) ) {
-      		$("#filter_form").toggleClass('norm');
-      }
-      
+      function func2() {
+		$("#sticky-wrapper, #filt-sticky-wrapper").removeClass("hides");
+		$("#filt").css({"padding-top":"4px"})
+}
+setTimeout(func2, 200);
+      //$("#filter_form").addClass('norm').css({ "height":"auto", "transform":"translateY(0%)", "overflow":"initial", "padding":"0 0 15px 0"});
    }
    lastScrollTop = st;
 });

@@ -47,6 +47,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100%;
+ 
 }
 ul {
     list-style-type: none;
@@ -73,6 +74,8 @@ ul {
     background: url( logo.png) 0 0 no-repeat;
     margin-bottom: -21px;
     z-index: 10;
+     -webkit-transition: width 0.4s, height 0.4s;
+    transition: width 0.4s, height 0.4s;
 
 }
 
@@ -202,21 +205,40 @@ button.form-mod__sendbutton:active {
     width: 50%;
     float: left;
 }
-.is-sticky #nav li a i {
-    display: none;
+
+#sticky-wrapper.hides .header {
+    -webkit-transition: top 0.4s;
+    transition: top 0.4s;
+    top:-75px !important;
+}
+ #filt-sticky-wrapper.hides .filter {
+  
+    top:-70px !important;
 }
 @media screen and (min-width: 992px) {
     #sticky-wrapper {
     height: auto !important;
 }
+.tags {
+    padding-right: 120px;
+}
+ #sticky-wrapper.is-sticky {
+
+ }
  #sticky-wrapper.is-sticky .header {
     padding-top: 12px;
     height: 75px !important
 } 
+.is-sticky #nav li a i {
+    display: none;
+}
 .is-sticky .dd {
     margin-left: 5px; 
 } 
-
+.antiwrap {
+    width: 100%;
+    height: 195px;
+}
 .is-sticky .logo {
     width: 37px;
     background-size: 414%;
@@ -224,6 +246,15 @@ button.form-mod__sendbutton:active {
         left: 0%;
     top: -6px;
 } 
+}
+.is-sticky .filter {
+   padding-top: 4px;
+}
+#filt-sticky-wrapper {
+    transition: all 0.4s;
+}
+#filt-sticky-wrapper.is-sticky {
+   
 }
 .logo a {
     width: 100%;
@@ -270,36 +301,45 @@ button.form-mod__sendbutton:active {
     left: 1px;
     color: #00277a;
     font-size: 18px;
-    bottom: 5px;
+    bottom: -10px;
     cursor: pointer;
     width: 118px;
     padding-left: 33px;
     line-height: 27px;
-    z-index: 5;
+    z-index: 419;
 }
 #filter_form {
-    display: none;
-    height: 0;
- 
+    
     width: 100%;
-
-    padding-bottom: 15px;
+    padding-bottom: 0px;
     background-color: #E9EDF1;
-    z-index: 400;
-    transition: height 0.3s;
+    z-index: 420;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-will-change: transform;
+    will-change: transform;
 }
 #filter_form.norm {
-    display: block;
-    height: auto;
-
+    // display: block;
+    height: auto !important;
+    transform:translateY(0%) !important;
+    overflow:initial !important; 
+    
 }
+#filter_form.nenorm {
+    display: none;
+    height: 0;
+}
+
 .jslider .jslider-label  {
     display:  none !important; 
 }
 
 @media screen and (max-width: 992px) {
     .is-sticky .filter {
-        top: 67px !important
+        top: 0px !important;
+        position: relative !important;
     }
 }
 
@@ -433,7 +473,7 @@ text-align: center;
 }
 .reg-block {
     float: right;
-    margin: -6px 0 0 0;
+    margin: 3px 0 0 0;
     position: relative;
     z-index: 10;
 }
@@ -632,6 +672,8 @@ text-decoration: none;
     position: relative;
     z-index: 200 !important;
     box-shadow: 1.1px 0.5px 6px rgba(0,0,0, 0.3);
+      -webkit-transition: top 0.4s;
+    transition: top 0.4s;
 }
 
 .img_h2 {
@@ -805,13 +847,25 @@ text-decoration: none;
 }
 
 .tags {
-        clear: both;
-    margin: 0px 0;
+    clear: both;
+    margin: 12px 0 0px 0;
     position: relative;
     padding-left: 120px;
-    height: 33px;
+    height: auto;
     box-sizing: border-box;
 }
+
+.tags:before,
+.tags:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.tags:after {
+    clear: both;
+}
+
+
 .tags .total {
     float: left;
     font-size: 14px;
@@ -6826,7 +6880,7 @@ transition: all 0.3s ease ;
     color:#214798;
 }
 .checkbox_price-slider {
-    top:-32px
+    top:-21px
 }
 .nav-tabs_my {
      border-bottom: 1px solid #bababa;

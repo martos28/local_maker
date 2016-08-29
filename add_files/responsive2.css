@@ -22,7 +22,7 @@
 }
 .dd {
    float: left;
-    z-index: 500;
+    z-index: 3000;
     margin-top: 0px;
     position: relative;
     width: auto !important;
@@ -543,6 +543,16 @@ a.nav-toggle {
  .header  .container {
      width: 100%
  }
+ #filter_form {
+        transform: translateY(0px) !important;
+    height: auto !important;
+    overflow: inherit !important;
+    padding:  0 0 15px 0;
+    position: relative;
+ }
+ #filt-sticky-wrapper.hides .filter {
+    top: 0px !important;
+}
  .dd {
 -webkit-transform: translateY(13px);
     transform: translateY(13px);
