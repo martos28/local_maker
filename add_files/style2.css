@@ -292,20 +292,24 @@ button.form-mod__sendbutton:active {
     position: relative;
 
 }
-
+.show_filtY__pic {
+    fill: #42474a;
+    margin-right: 9px;
+    position: relative;
+    top: 3px;
+}
 .show_filtY {
-    background: url("show_f.png") no-repeat 0px 0px;
     display: block;
-    height: 34px;
+    height: 28px;
     position: absolute;
     left: 1px;
     color: #00277a;
     font-size: 18px;
-    bottom: -10px;
+    bottom: -4px;
     cursor: pointer;
     width: 118px;
-    padding-left: 33px;
-    line-height: 27px;
+    padding-left: 0px;
+    line-height: 28px;
     z-index: 419;
 }
  .show_filtY2 {
