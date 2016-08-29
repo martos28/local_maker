@@ -20,6 +20,18 @@
 .is-sticky .tags .total, .is-sticky #map_link_cnt2 {
     display: none;
 }
+.show_filtY2 {
+        position: absolute;
+    left: auto;
+    right: 45px;
+    color: #fff;
+    width: 36px;
+    bottom: -18px;
+    padding: 0;
+    height: 39px;
+    z-index: 419;
+    display: block;
+}
 .dd {
    float: left;
     z-index: 3000;
@@ -63,7 +75,7 @@
 
 
 .js #nav {
-  top:31px;
+  top:30px;
    z-index: 2001;
        left: 0%
 }
@@ -434,9 +446,7 @@ left: 98px;
     top: auto;
 
 }
-a.nav-toggle {
-    top:18px
-}
+
 .checkbox.checkbox_price-slider {
     width: 140px;
     right: -5px;

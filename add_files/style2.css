@@ -308,6 +308,15 @@ button.form-mod__sendbutton:active {
     line-height: 27px;
     z-index: 419;
 }
+ .show_filtY2 {
+    display: none;
+  
+}
+.show_filtY2__pic {
+    fill:#fff;
+    width: 100%
+}
+
 #filter_form {
     
     width: 100%;

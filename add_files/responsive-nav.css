@@ -96,19 +96,13 @@ font-size: 18px;
   -ms-user-select: none;
   user-select: none;
   width: 30px;
-  height: 31px;
+  height: 34px;
   position: absolute;
-    top: 14px;
+      top: 13px;
     z-index: 651;
-    right: 10px;
-  text-indent: -9999px;
+    right: 7px;
   overflow: hidden;
-  background:  url(menu.png) no-repeat 0 0 ;
 }
-
-
-
-
 
 
 #nav.opened {
