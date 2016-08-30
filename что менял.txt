@@ -3,6 +3,8 @@
 
 add.html : 
 
+0.вызовы в js строки 837-890
+
 1 перенес <form id="filter_form" action="http://mobile.vlad-tests.ru/ru/cars" method="post">
 <input type="hidden" name="_csrf" value="cXMxY19DVEgyNgAKBQo6ODcGfCYnejckAxFWOiUMNh87HF4la3QNew==">
     <div class="sliders-block down">
@@ -58,7 +60,15 @@ fancybox_loading@2x.gif
 fancybox_overlay.png
 fancybox_sprite.png
 fancybox_sprite@2x.png
+logo2.png
 
 16. инлайн модальный окна перед </body>
+
+17. Авторизация Сообщение  КАРТА для примера как надо сделать, вызовы в js строки 837-890
+18.  footer - там весь заменить надо
+
+
+
+style2.css responsive-nav.css responsive2.css - Заменить тупо - но прописать потом пути к картинкам адкватные - редакторы  - поиск и замена
 
 CSS - будем просто заливать css с моего компа на сайта, ПРЕДВАРИТЕОЛЬНО выправив все ПУТИ к Картинкам - замена в редакторе там легко.

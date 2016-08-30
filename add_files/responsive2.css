@@ -14,6 +14,12 @@
 .reg-block   {
     display: none;
 }
+  .tags{
+     margin: 5px 0 6px 0;    padding-left: 0px;
+    }
+.show_filtY, .switcher-lang_footer {
+    display: none;  
+}
 .tags .total, #map_link_cnt2 {
     display: none;
 }
@@ -21,12 +27,12 @@
     display: none;
 }
 .show_filtY2 {
-        position: absolute;
+    position: absolute;
     left: auto;
-    right: 45px;
+    right: 63px;
     color: #fff;
-    width: 36px;
-    bottom: -18px;
+    width: 32px;
+    bottom: -19px;
     padding: 0;
     height: 39px;
     z-index: 419;
@@ -125,7 +131,7 @@
         background: #42474a;
         padding: 4px 0 0 0;
         z-index: 100 ;
-         height: 67px;
+         height: 60px;
     }
 .header #nav  li a, .container #nav3 li a {
     border: 0 none;
@@ -444,9 +450,11 @@ left: 98px;
 .box   {
      bottom: 14px;
     top: auto;
-
+    
 }
-
+.header {
+    height:67px
+}
 .checkbox.checkbox_price-slider {
     width: 140px;
     right: -5px;
@@ -547,6 +555,10 @@ left: 98px;
     .container {
         width: 96%;
     }
+    .js #nav {
+    top: 24px;
+ 
+}
     .dobav_add, .rgh_dat, .obod .polos_t, .obod .polos_b, .hide_bo, .righta, .add_fots .files .borde, .filt_pref, .fix_map .side_rec.itm_cars, .fix_map .map_find > .container, .fix_map .footer, #razv, .fix_map .filt_pref .vr   {
         display: none;
     }
@@ -572,7 +584,7 @@ left: 98px;
     background-size: 414%;
     height: 40px;
     left: 2%;
-    top: 11px;
+    top: 8px;
 
  }
 .filter-menu .reset_btn  {
@@ -1338,14 +1350,15 @@ ul.nav2 li.static.hover ul.f16 {
     width: 105px;
  }
 
-.footer .right {
-         padding-top: 8px;
+.footer p.right {
+    padding-top: 0px;
     width: 35%;
+    padding-left: 0px ;
 }
 .footer p {
     width: 26%;
     font-size: 12px;
-    line-height: 1;
+    line-height: 33px;
 }
 .footer p a {
     font-size: 11px;
@@ -1573,9 +1586,7 @@ position: absolute;
     font-size:12px;
        margin-left: -1px
 }
-    .tags{
-     margin: 5px 0 6px 0;    padding-left: 97px;
-    }
+  
     .tags ul {
       margin-top: 0px;
     }
@@ -2104,6 +2115,9 @@ ul.nav2 li.static ul.f16 li a {
 @media screen   and  (max-width: 549px) { 
     .man-right{
         display: none;
+    }
+    .footer p:first-of-type  {
+        line-height: 14px; 
     }
     .content .catalog .item .info {
         float: right;

@@ -873,7 +873,7 @@ $("body").on( "click", ".right-menu .mail", function(show_forma) {
 
                 $(this).parents(".hover").find(".rod").empty().html(text);
                 var cmd2 = $(this).attr('data-cmd');
-		        $("#taags ul").append("<li><a data-cmd="+cmd2+" class='close' href='#'></a>"+text+"</li>");
+		        $("#taags ul").append("<li>#"+text+"</li>");
 
             }
 	    });
