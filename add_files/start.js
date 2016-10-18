@@ -645,52 +645,52 @@ $("body").on( "click", "#twit2", function(ados9) {
 
 
 
-var adjustLeft = function() {
-var pos = $(".f16").position()
- var pos = $(".content .catalog .item .images").width();
-  +pos
-  parseInt(pos,10);
+// var adjustLeft = function() {
+// var pos = $(".f16").position()
+//  var pos = $(".content .catalog .item .images").width();
+//   +pos
+//   parseInt(pos,10);
 
-  if (www < 768) {
+//   if (www < 768) {
 
-  var posi = $(".content .catalog.predlo .item .edits .windos").width();
-
-
-    var righ = $(" .main > .container").width(); //ширина
-    var righ2 = (righ*2/100)+11;   //2% от ширины +6px
-    var righ3 = righ2-righ2*2+"px";   //отрицат.
+//   var posi = $(".content .catalog.predlo .item .edits .windos").width();
 
 
-    var righ22 = (righ*2/100)+20; //2% от .container
-    var marg = righ22-righ22*2+"px" ; //отри
-
-   //$(".f16").css({'left' :'-20px', 'right' : '-20px' });
-  }
-  else {
+//     var righ = $(" .main > .container").width(); //ширина
+//     var righ2 = (righ*2/100)+11;   //2% от ширины +6px
+//     var righ3 = righ2-righ2*2+"px";   //отрицат.
 
 
-   var marg = pos+(pos*10/100)+20 ;
-    var nmarg = marg-marg*2+"px";
-    var righ = $(" .main > .container").width(); //ширина
-    var righ2 = (righ*2/100)+11;   //2% от ширины +6px
-    var righ3 = righ2-righ2*2+"px";   //отрицат.
-   $(".f16").css({'left' : nmarg, 'right' : righ3 });
+//     var righ22 = (righ*2/100)+20; //2% от .container
+//     var marg = righ22-righ22*2+"px" ; //отри
 
-      var marg = pos+40;
-    var nmarg = marg-marg*2+"px";
-   $(".f16").css({'left' : nmarg });
+//    //$(".f16").css({'left' :'-20px', 'right' : '-20px' });
+//   }
+//   else {
 
-  }
 
-};
+//    var marg = pos+(pos*10/100)+20 ;
+//     var nmarg = marg-marg*2+"px";
+//     var righ = $(" .main > .container").width(); //ширина
+//     var righ2 = (righ*2/100)+11;   //2% от ширины +6px
+//     var righ3 = righ2-righ2*2+"px";   //отрицат.
+//    $(".f16").css({'left' : nmarg, 'right' : righ3 });
 
-$( ".content .catalog.predlo .item .edits .rekls" ).click(function() {
-  adjustLeft();
-});
+//       var marg = pos+40;
+//     var nmarg = marg-marg*2+"px";
+//    $(".f16").css({'left' : nmarg });
 
-$(window).resize(function(){
-    adjustLeft();
-});
+//   }
+
+// };
+
+// $( ".content .catalog.predlo .item .edits .rekls" ).click(function() {
+//   adjustLeft();
+// });
+
+// $(window).resize(function(){
+//     adjustLeft();
+// });
 
 
 
